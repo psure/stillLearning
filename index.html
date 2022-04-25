@@ -30,8 +30,9 @@
     console.log(response.statusText); // OK
 
     if (response.status === 200) {
-        let data = await response.text();
+        let data = await response.json();
         // handle data
+	    console.log(data.filtered.PE.totOI);
     }
 }
 
