@@ -22,9 +22,19 @@
    <body>
 
     <script>
-	    fetch('https://www.nseindia.com/api/option-chain-indices?symbol=BANKNIFTY')
-  .then(response => response.json())
-  .then(data => console.log(data.filtered.PE.totOI));
+	    async function fetchText() {
+    let response = await fetch('/readme.txt');
+
+    console.log(response.status); // 200
+    console.log(response.statusText); // OK
+
+    if (response.status === 200) {
+        let data = await response.text();
+        // handle data
+    }
+}
+
+fetchText();
 
 </script>	    
 
