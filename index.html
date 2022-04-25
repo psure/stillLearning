@@ -1,42 +1,6 @@
 <!DOCTYPE html>
 <html>
-	<!--<head>
-		<meta charset="utf-8">
-		<title>My first three.js app</title>
-		<style>
-			body { margin: 0; }
-		</style>
-	</head>
-	<body>
-		<script src="three.js"></script>
-		<script>
-			const scene = new THREE.Scene();
-			const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
-
-			const renderer = new THREE.WebGLRenderer();
-			renderer.setSize( window.innerWidth, window.innerHeight );
-			document.body.appendChild( renderer.domElement );
-			const geometry = new THREE.BoxGeometry();
-			const material = new THREE.MeshBasicMaterial({color: 0x00ff00});
-			const cube = new THREE.Mesh(geometry, material);
-			scene.add(cube);
-
-			camera.position.z = 5;
-
-			const animate = function () {
-				requestAnimationFrame( animate );
-
-				cube.rotation.x += 0.01;
-				cube.rotation.y += 0.01;
-
-				renderer.render( scene, camera );
-			};
-
-			animate();	
-			
-		</script>			
-		
-	</body>-->
+	
 	
 	<head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
@@ -56,47 +20,17 @@
                 height: 100%;
                 touch-action: none;
             }
-        </style>
-
-        <script src="https://cdn.babylonjs.com/babylon.js"></script>
-        <script src="https://cdn.babylonjs.com/loaders/babylonjs.loaders.min.js"></script>
-        <script src="https://code.jquery.com/pep/0.4.3/pep.js"></script>
+        </style>        
     </head>
 
    <body>
 
-    <canvas id="renderCanvas" touch-action="none"></canvas> <!-- touch-action="none" for best results from PEP -->
-
     <script>
-        const canvas = document.getElementById("renderCanvas"); // Get the canvas element
-        const engine = new BABYLON.Engine(canvas, true); // Generate the BABYLON 3D engine
+	    fetch('https://www.nseindia.com/api/option-chain-indices?symbol=BANKNIFTY')
+  .then(response => response.json())
+  .then(data => console.log(data.filtered.PE.totOI));
 
-        // Add your code here matching the playground format
-        const createScene = function () {
-    
-            const scene = new BABYLON.Scene(engine);  
-
-            BABYLON.SceneLoader.ImportMeshAsync("semi_house", "https://assets.babylonjs.com/meshes/", "both_houses_scene.babylon");
-
-            const camera = new BABYLON.ArcRotateCamera("camera", -Math.PI / 2, Math.PI / 2.5, 15, new BABYLON.Vector3(0, 0, 0));
-            camera.attachControl(canvas, true);
-            const light = new BABYLON.HemisphericLight("light", new BABYLON.Vector3(1, 1, 0));
-
-            return scene;
-        };
-
-        const scene = createScene(); //Call the createScene function
-
-        // Register a render loop to repeatedly render the scene
-        engine.runRenderLoop(function () {
-                scene.render();
-        });
-
-        // Watch for browser/canvas resize events
-        window.addEventListener("resize", function () {
-                engine.resize();
-        });
-    </script>
+</script>	    
 
    </body>
 </html>
