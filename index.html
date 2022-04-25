@@ -23,7 +23,7 @@
 
     <script>
 	    async function fetchText() {
-    let response = await fetch('https://www.nseindia.com/api/option-chain-indices?symbol=BANKNIFTY',{mode: 'cors',
+    let response = await fetch('https://www.nseindia.com/api/option-chain-indices?symbol=BANKNIFTY',{mode: 'no-cors',
   headers: {
     'Access-Control-Allow-Origin':'*'
   }});
