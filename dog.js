@@ -1,2 +1,2 @@
-const dog = https://psure.github.io/stillLearning/all_dog.json
+const dog = "./all_dog.json"
 console.log(dog)
