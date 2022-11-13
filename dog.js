@@ -1,2 +1,2 @@
-const dog = "./all_dog.json"
-console.log(dog)
+//const dog = "./all_dog.json"
+console.log("dog")
